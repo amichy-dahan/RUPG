@@ -5,17 +5,18 @@ import { Renderer } from './render.js';
 
 
 
-addEventListener("DOMContentLoaded", async () => {
+addEventListener("DOMContentLoaded", () => {
 
     const person = new Person();
     const renderer = new Renderer();
 
-    const peopleArray = await person.data();
-    console.log(peopleArray);
+    
+    
 
    const btn = document.getElementById("btn");
-    btn.addEventListener("click", (e) => {
-        
+    btn.addEventListener("click",async(e) => {
+        const peopleArray = await person.data();
+        renderer.renderPerson(peopleArray);
     })
 
 

@@ -4,8 +4,6 @@ export class Person {
         this.person = []
     }
 
-
-
     async data() {
         try {
             for (let index = 0; index < 7; index++) {

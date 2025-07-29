@@ -1,0 +1,30 @@
+
+#containerA {
+  display: flex;
+  justify-content: center; /* מרכז אופקית */
+  align-items: center;     /* מרכז אנכית */
+  border: 1px solid black;   
+  height: 100px;       /* גובה של כל חלון הדפדפן */
+}
+
+#btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(116, 180, 111);
+  color: aliceblue;
+  font-weight: bold;
+  cursor: pointer;
+
+  width: 200px;        /* רוחב קבוע */
+  max-width: 90vw;     /* לא יחרוג מ-90% מרוחב המסך */
+}
+
+
+#containerB {
+  display: flex;
+  justify-content: center; /* מרכז אופקית */
+  align-items: center;     /* מרכז אנכית */
+  border: 1px solid black;   
+  height: 600px;       /* גובה של כל חלון הדפדפן */
+}
