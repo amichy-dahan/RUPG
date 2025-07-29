@@ -1,9 +1,9 @@
 
 export class Renderer {
-    renderPosts(posts) {
+    renderPosts(persons) {
     
-       
 
+        
 }
 
 }
