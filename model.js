@@ -19,17 +19,30 @@ export class Person {
         }
     }
 
-      async kenya() {
-        
+    async kenya() {
+
         try {
-      
-                const text = await axios.get(`https://api.kanye.rest`)
-                return text;
+
+            const text = await axios.get(`https://api.kanye.rest`)
+
+            return text.data.quote;
         } catch (err) {
             console.error("Error fetching data:", err);
             throw err;
         }
     }
+
+
+    async getRandomPokemon() {
+        const randomId = Math.floor(Math.random() * 1025) + 1;
+        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+        const name = res.data.name;
+        const image = res.data.sprites.front_default;
+        return { name, image };
+
+    }
+
+
 
 
 

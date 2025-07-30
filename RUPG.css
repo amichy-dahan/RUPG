@@ -54,14 +54,24 @@ body {
   font-weight: bold;
 }
 
-#childeContainerA {
-  width: 70%;
-  height: 150px;
+#firstPerson {
+  width: 98%;
+ 
   padding: 10px;
   display: flex;
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 1px 1px 5px 3px rgb(224, 224, 224);
+}
+#childeContainerA {
+  width: 100%;
+  
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px 3px rgb(253, 248, 248);
 }
 
 #childeContainerB {
@@ -93,4 +103,16 @@ body {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+#textKeny{
+    font-family: 'Patrick Hand', cursive;
+    padding-left: 20px;
+    
+}
+#textFavorite{
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 20px;
+    font-size: 20px;
+    
 }

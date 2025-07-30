@@ -9,8 +9,10 @@ addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("btn");
     btn.addEventListener("click", async (e) => {
         const peopleArray = await person.data();
-        const text = person.kenya()
-        renderer.renderPerson(peopleArray , text);
+        const text = await person.kenya()
+        const pokemon = await person.getRandomPokemon();
+        
+        renderer.renderPerson(peopleArray , text ,pokemon);
     })
 })
 
