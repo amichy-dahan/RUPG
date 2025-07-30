@@ -8,11 +8,11 @@ addEventListener("DOMContentLoaded", () => {
     const renderer = new Renderer();
     const btn = document.getElementById("btn");
     btn.addEventListener("click", async (e) => {
-        const peopleArray = await person.data();
+        const peopleArray =await person.data();
         const text = await person.kenya()
         const pokemon = await person.getRandomPokemon();
         const aboutMe = await person.getAboutMe();
-        renderer.renderPerson(peopleArray , text ,pokemon , aboutMe);
+        renderer.renderPerson(peopleArray , text ,pokemon, aboutMe);
     })
 })
 

@@ -1,7 +1,8 @@
 
+
 export class Renderer {
 
-    renderPerson(persons, text ,pokemon,about) {
+    renderPerson(persons, text, pokemon, about) {
         console.log(persons)
         const postHtml = document.getElementById("dadContainer");
         const childeContainerA = document.createElement("div");
@@ -14,55 +15,71 @@ export class Renderer {
         this.firstPersonRandom(per1, postHtml, childeContainerA, text);
         this.otherPresonFriends(newPresons, postHtml, childeContainerB)
         this.kenyaWest(childeContainerA, text)
-        this.pokemon(childeContainerA ,pokemon)
-        this.aboutMe(childeContainerA , about)
+        this.pokemon(childeContainerA, pokemon)
+        this.aboutMe(childeContainerA, about)
     }
 
 
     firstPersonRandom(per1, postHtml, childeContainerA) {
         childeContainerA.id = "childeContainerA"
         childeContainerA.innerHTML = ""
+        this.createFirstPersonElement(per1, postHtml, childeContainerA)
+
+    }
+    createFirstPersonElement(per1, postHtml, childeContainerA) {
         const firstPerson = document.createElement("div");
-        firstPerson.id = "firstPerson"
-
-
         const texts = document.createElement("div")
         const text1 = document.createElement("p")
         const text2 = document.createElement("p")
         const picFirstPerson = document.createElement("img")
+        this.appandChilds(postHtml, childeContainerA, firstPerson, picFirstPerson, texts, text1, text2)
+        this.createFirstPersonIds(firstPerson, texts, text1, text2, picFirstPerson);
+        this.innerText(per1, text1, text2, picFirstPerson)
+    }
 
-        text1.innerHTML = per1.name.first + " " + per1.name.last
-        text2.innerHTML = per1.location.city + " , " + per1.location.state
 
-        picFirstPerson.setAttribute("src", per1.picture.large)
-
+    appandChilds(postHtml, childeContainerA, firstPerson, picFirstPerson, texts, text1, text2) {
         postHtml.appendChild(childeContainerA)
         childeContainerA.appendChild(firstPerson)
         firstPerson.appendChild(picFirstPerson)
         firstPerson.appendChild(texts)
-
         texts.appendChild(text1)
         texts.appendChild(text2)
+
+
+    }
+
+    innerText(per1, text1, text2, picFirstPerson) {
+        text1.innerHTML = per1.name.first + " " + per1.name.last
+        text2.innerHTML = per1.location.city + " , " + per1.location.state
+        picFirstPerson.setAttribute("src", per1.picture.large)
+    }
+
+
+    createFirstPersonIds(firstPerson, texts, text1, text2, picFirstPerson) {
+        firstPerson.id = "firstPerson"
         texts.id = "texts"
         text1.id = "text1"
         text2.id = "text2"
         picFirstPerson.id = "pic"
     }
+
+
+
     otherPresonFriends(newPresons, postHtml, childeContainerB) {
 
+        this.createElmentOtherFriends(childeContainerB, postHtml, newPresons);
+    }
+
+    createElmentOtherFriends(childeContainerB, postHtml, newPresons) {
         const title = document.createElement("div");
         const friends = document.createElement("div");
+        this.innerAndAppand(title, postHtml, childeContainerB, friends)
+        this.createOtherFriendsIds(childeContainerB, title, friends);
+        this.htmlFriend(newPresons, friends);
 
-        title.innerHTML = "friends"
-
-        childeContainerB.id = "childeContainerB"
-        title.id = "friendsTitle"
-        friends.id = "friends"
-
-
-        postHtml.appendChild(childeContainerB)
-        childeContainerB.appendChild(title)
-        childeContainerB.appendChild(friends)
+    }
+    htmlFriend(newPresons, friends) {
 
 
         newPresons.forEach(per => {
@@ -72,7 +89,24 @@ export class Renderer {
             friends.appendChild(newFriend);
         });
 
+
+
     }
+
+    innerAndAppand(title, postHtml, childeContainerB, friends) {
+        title.innerHTML = "friends"
+        postHtml.appendChild(childeContainerB)
+        childeContainerB.appendChild(title)
+        childeContainerB.appendChild(friends)
+
+    }
+
+    createOtherFriendsIds(childeContainerB, title, friends) {
+        childeContainerB.id = "childeContainerB"
+        title.id = "friendsTitle"
+        friends.id = "friends"
+    }
+
     kenyaWest(childeContainerA, text) {
 
 
@@ -88,15 +122,15 @@ export class Renderer {
 
 
     }
-    pokemon(childeContainerA ,pokemon){
+    pokemon(childeContainerA, pokemon) {
         const containerPokemon = document.createElement("div");
         childeContainerA.appendChild(containerPokemon);
-        containerPokemon.id ="containerPokemon"
+        containerPokemon.id = "containerPokemon"
 
         const imgPokemon = document.createElement("img");
-        imgPokemon.setAttribute("src" ,pokemon.image);
+        imgPokemon.setAttribute("src", pokemon.image);
         containerPokemon.appendChild(imgPokemon)
-        imgPokemon.id ="imgPokemon";
+        imgPokemon.id = "imgPokemon";
 
         const namePokemon = document.createElement("p");
         namePokemon.innerHTML = pokemon.name;
@@ -104,11 +138,11 @@ export class Renderer {
 
         const line = document.createElement("div");
         childeContainerA.appendChild(line);
-        line.id ="line"
+        line.id = "line"
 
     }
 
-    aboutMe (childeContainerA ,about){
+    aboutMe(childeContainerA, about) {
         const aboutMe = document.createElement("div");
         aboutMe.innerHTML = "About Me"
         childeContainerA.appendChild(aboutMe);
