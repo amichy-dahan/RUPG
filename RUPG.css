@@ -117,9 +117,20 @@ body {
     
 }
 #containerPokemon{
-  
+ width: 100%; 
 display: flex;
 align-items: center;
-padding: 50px;
+padding-top: 50px;
 font-size: 20px;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+#imgPokemon{
+width: 130px;
+
+}
+#line{
+   border-top: 2px solid black;
+   width: 50%;
+   margin: 20px 0;
 }

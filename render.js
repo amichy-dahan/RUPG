@@ -97,11 +97,15 @@ export class Renderer {
         const imgPokemon = document.createElement("img");
         imgPokemon.setAttribute("src" ,pokemon.image);
         containerPokemon.appendChild(imgPokemon)
+        imgPokemon.id ="imgPokemon";
 
         const namePokemon = document.createElement("p");
         namePokemon.innerHTML = pokemon.name;
         containerPokemon.appendChild(namePokemon)
-      
+
+        const line = document.createElement("div");
+        childeContainerA.appendChild(line);
+        line.id ="line"
 
     }
 
