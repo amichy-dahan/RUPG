@@ -22,9 +22,7 @@ export class Person {
     async kenya() {
 
         try {
-
             const text = await axios.get(`https://api.kanye.rest`)
-
             return text.data.quote;
         } catch (err) {
             console.error("Error fetching data:", err);
@@ -34,11 +32,17 @@ export class Person {
 
 
     async getRandomPokemon() {
-        const randomId = Math.floor(Math.random() * 1025) + 1;
-        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
-        const name = res.data.name;
-        const image = res.data.sprites.front_default;
-        return { name, image };
+
+        try {
+            const randomId = Math.floor(Math.random() * 1025) + 1;
+            const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+            const name = res.data.name;
+            const image = res.data.sprites.front_default;
+            return { name, image };
+        } catch (err) {
+            console.error("Error fetching data:", err);
+            throw err;
+        }
 
     }
 
