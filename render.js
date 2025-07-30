@@ -99,7 +99,7 @@ export class Renderer {
 
         const namePokemon = document.createElement("p");
         namePokemon.innerHTML = pokemon.name;
-        containerPokemon.appendChild(imgPokemon)
+        containerPokemon.appendChild(namePokemon)
       
 
     }
