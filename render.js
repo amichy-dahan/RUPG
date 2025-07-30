@@ -17,6 +17,7 @@ export class Renderer {
         this.otherPresonFriends(newPresons, postHtml, childeContainerB)
         this.kenyaWest(childeContainerA, text)
         this.pokemon(childeContainerA ,pokemon)
+        this.aboutMe()
     }
 
 
@@ -106,6 +107,10 @@ export class Renderer {
         const line = document.createElement("div");
         childeContainerA.appendChild(line);
         line.id ="line"
+
+    }
+
+    aboutMe (childeContainerB){
 
     }
 

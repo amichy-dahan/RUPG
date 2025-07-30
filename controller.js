@@ -11,8 +11,8 @@ addEventListener("DOMContentLoaded", () => {
         const peopleArray = await person.data();
         const text = await person.kenya()
         const pokemon = await person.getRandomPokemon();
-        
-        renderer.renderPerson(peopleArray , text ,pokemon);
+        const aboutMe = await person.getAboutMe();
+        renderer.renderPerson(peopleArray , text ,pokemon , aboutMe);
     })
 })
 

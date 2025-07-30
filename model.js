@@ -44,7 +44,17 @@ export class Person {
 
 
 
+    async getAboutMe() {
+        try {
 
+            const res = await axios.get(`https://baconipsum.com/api/?type=meat-and-filler`);
+            return res.data[0]
+        } catch (err) {
+            console.error("Error fetching data:", err);
+            throw err;
+        }
+
+    }
 
 
 }
