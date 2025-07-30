@@ -92,6 +92,7 @@ export class Renderer {
     pokemon(childeContainerA ,pokemon){
         const containerPokemon = document.createElement("div");
         childeContainerA.appendChild(containerPokemon);
+        containerPokemon.id ="containerPokemon"
 
         const imgPokemon = document.createElement("img");
         imgPokemon.setAttribute("src" ,pokemon.image);
