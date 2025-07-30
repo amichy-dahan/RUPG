@@ -3,10 +3,7 @@ import { Person } from './model.js';
 import { Renderer } from './render.js';
 
 
-
-
 addEventListener("DOMContentLoaded", () => {
-
     const person = new Person();
     const renderer = new Renderer();
     const btn = document.getElementById("btn");
