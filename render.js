@@ -2,7 +2,7 @@
 export class Renderer {
 
 
-    renderPerson(persons) {
+    renderPerson(persons , text) {
         console.log(persons)
         const postHtml = document.getElementById("dadContainer");
         const childeContainerA = document.createElement("div");

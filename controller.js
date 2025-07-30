@@ -9,7 +9,8 @@ addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("btn");
     btn.addEventListener("click", async (e) => {
         const peopleArray = await person.data();
-        renderer.renderPerson(peopleArray);
+        const text = person.kenya()
+        renderer.renderPerson(peopleArray , text);
     })
 })
 
