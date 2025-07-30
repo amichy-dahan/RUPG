@@ -1,8 +1,7 @@
 
 export class Renderer {
 
-
-    renderPerson(persons, text ,pokemon) {
+    renderPerson(persons, text ,pokemon,about) {
         console.log(persons)
         const postHtml = document.getElementById("dadContainer");
         const childeContainerA = document.createElement("div");
@@ -12,12 +11,11 @@ export class Renderer {
         const per1 = persons[0];
         let newPresons = persons.filter(per => per != per1)
 
-
         this.firstPersonRandom(per1, postHtml, childeContainerA, text);
         this.otherPresonFriends(newPresons, postHtml, childeContainerB)
         this.kenyaWest(childeContainerA, text)
         this.pokemon(childeContainerA ,pokemon)
-        this.aboutMe()
+        this.aboutMe(childeContainerA , about)
     }
 
 
@@ -110,8 +108,16 @@ export class Renderer {
 
     }
 
-    aboutMe (childeContainerB){
+    aboutMe (childeContainerA ,about){
+        const aboutMe = document.createElement("div");
+        aboutMe.innerHTML = "About Me"
+        childeContainerA.appendChild(aboutMe);
+        aboutMe.id = "aboutTitle"
 
+        const text = document.createElement("p");
+        text.innerHTML = about
+        childeContainerA.appendChild(text);
+        text.id = "textAbout"
     }
 
 }
