@@ -37,7 +37,6 @@ export class Renderer {
         this.innerText(per1, text1, text2, picFirstPerson)
     }
 
-
     appandChilds(postHtml, childeContainerA, firstPerson, picFirstPerson, texts, text1, text2) {
         postHtml.appendChild(childeContainerA)
         childeContainerA.appendChild(firstPerson)
@@ -45,7 +44,6 @@ export class Renderer {
         firstPerson.appendChild(texts)
         texts.appendChild(text1)
         texts.appendChild(text2)
-
 
     }
 
@@ -63,8 +61,6 @@ export class Renderer {
         text2.id = "text2"
         picFirstPerson.id = "pic"
     }
-
-
 
     otherPresonFriends(newPresons, postHtml, childeContainerB) {
 

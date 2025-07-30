@@ -6,30 +6,19 @@ export class Person {
 
     async data() {
         this.person = [];
-        try {
             for (let index = 0; index < 7; index++) {
-                const newPreson = await axios.get(`https://randomuser.me/api/`)
-                const csvData = newPreson.data.results[0]
-                this.person.push(csvData)
+                const res =await this.axiosCall(`https://randomuser.me/api/`)
+                const Data = res.data.results[0]
+                this.person.push(Data)
             }
             return this.person
-        } catch (err) {
-            console.error("Error fetching data:", err);
-            throw err;
-        }
     }
 
     async kenya() {
-
-        try {
-            const text = await axios.get(`https://api.kanye.rest`)
-            return text.data.quote;
-        } catch (err) {
-            console.error("Error fetching data:", err);
-            throw err;
-        }
+            const res =await this.axiosCall(`https://api.kanye.rest`)
+            return res.data.quote;
     }
-
+    
 
     async getRandomPokemon() {
 
@@ -45,19 +34,21 @@ export class Person {
         }
 
     }
-
-
-
     async getAboutMe() {
-        try {
-
-            const res = await axios.get(`https://baconipsum.com/api/?type=meat-and-filler`);
+            const res =await this.axiosCall(`https://baconipsum.com/api/?type=meat-and-filler`)
             return res.data[0]
+    }
+
+
+    async axiosCall(url){
+      
+       try {
+            const res = await axios.get(url);
+            return res
         } catch (err) {
             console.error("Error fetching data:", err);
             throw err;
         }
-
     }
 
 
